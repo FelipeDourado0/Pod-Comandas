@@ -1,11 +1,13 @@
 package com.example.comanda
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+
 
 class LoginFragment : Fragment() {
 
@@ -20,6 +22,12 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_login, container, false)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //necessário para esconder a actionbar apenas dessa tela
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
