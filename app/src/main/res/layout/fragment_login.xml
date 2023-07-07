@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:svgimageview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginFragment">
@@ -21,39 +21,76 @@
             app:layout_constraintTop_toTopOf="parent"
             svgimageview:svg="pod_comanda_icon.svg" />
 
-        <EditText
-            android:id="@+id/editTextTextEmailAddress"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailbox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="330dp"
             android:layout_height="56dp"
             android:layout_marginTop="70dp"
-            android:ems="10"
-            android:text="Email"
+            android:hint="Email"
             android:inputType="textEmailAddress"
+            android:singleLine="false"
+            android:textColorHint="@color/light_grey"
+            app:boxStrokeColor="@color/grey"
+            app:hintTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/podComandaImg" />
+            app:layout_constraintTop_toBottomOf="@+id/podComandaImg"
 
-        <EditText
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmailValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editTextTextPassword"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="330dp"
             android:layout_height="56dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
+            android:layout_marginTop="20dp"
+            android:hint="Senha"
             android:inputType="textPassword"
-            android:text="Senha"
+            android:singleLine="false"
+            android:textColorHint="@color/light_grey"
+            android:visibility="visible"
+            app:boxStrokeColor="@color/grey"
+            app:hintTextColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+            app:layout_constraintTop_toBottomOf="@+id/emailbox"
 
-        <Button
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTextPasswordValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/acessar_btn"
             android:layout_width="330dp"
             android:layout_height="50dp"
             android:layout_marginTop="30dp"
+            android:background="@drawable/btn_padrao"
+            android:backgroundTint="@color/sea_green"
             android:text="ACESSAR"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+            tools:ignore="ExtraText" />
 
         <TextView
             android:id="@+id/ou_entre_com_text"
@@ -67,35 +104,49 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/acessar_btn" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/google_btn"
-            android:layout_width="130dp"
+            android:layout_width="230dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
+            android:background="@drawable/btn_padrao"
+            android:backgroundTint="@color/red_tomato"
             android:text="Google"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ou_entre_com_text" />
 
-        <TextView
-            android:id="@+id/text_nao_tem_conta"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginBottom="39dp"
-            android:layout_marginStart="75dp"
-            android:text="Não tem uma conta?"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="120dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="75dp"
-            android:layout_marginBottom="30dp"
-            android:text="Cadastre-se!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/text_nao_tem_conta"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="75dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="39dp"
+                android:text="Não tem uma conta?" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button3"
+                android:layout_width="130dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="75dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/btn_padrao"
+                android:backgroundTint="@color/white"
+                android:shadowRadius="120"
+                android:text="Cadastre-se!"
+                android:textSize="12sp" />
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
