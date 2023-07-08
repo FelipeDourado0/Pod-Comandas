@@ -2,7 +2,8 @@
 <resources>
     <color name="sea_green">#22A39F</color>
     <color name="grey">#222222</color>
-    <color name="light_grey">#434242</color>
+    <color name="mid_grey">#434242</color>
+    <color name="light_grey">#ADADAD</color>
     <color name="red_tomato">#E64848</color>
     <color name="green">#05E600</color>
     <color name="black">#FF000000</color>
