@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graphh"
+    app:startDestination="@id/login3">
+    <fragment
+        android:id="@+id/login3"
+        android:name="com.example.comanda.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login3_to_cadastroLoginFragment"
+            app:destination="@id/cadastroLoginFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastroLoginFragment"
+        android:name="com.example.comanda.CadastroLoginFragment"
+        android:label="fragment_cadastro_login"
+        tools:layout="@layout/fragment_cadastro_login" >
+        <action
+            android:id="@+id/action_cadastroLoginFragment_to_login3"
+            app:destination="@id/login3"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+</navigation>

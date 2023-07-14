@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.comanda.databinding.FragmentLoginBinding
 
 
@@ -28,13 +29,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.cadastreseBtn.setOnClickListener{
+            findNavController().navigate(R.id.action_login3_to_cadastroLoginFragment)
+        }
     }
-    override fun onResume() {
-        super.onResume()
-        //necessário para esconder a actionbar apenas dessa tela
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-    }
-
 
 }
