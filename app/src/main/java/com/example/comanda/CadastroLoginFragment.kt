@@ -73,7 +73,6 @@ class CadastroLoginFragment : Fragment() {
         val outputDateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).apply {
             timeZone = TimeZone.getTimeZone("UTC-3")
         }
-        val calendar = Calendar.getInstance()
 
         val datePicker =
             MaterialDatePicker.Builder.datePicker()
@@ -81,14 +80,15 @@ class CadastroLoginFragment : Fragment() {
                 .setTextInputFormat(outputDateFormat)
                 .build()
 
-
-
         datePicker.addOnPositiveButtonClickListener{
             val calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC-3"))
             calendar.time = Date(it)
-            Toast.makeText(this.context, calendar.time.toString(),Toast.LENGTH_SHORT).show()
+
             val month: String
-            if ((calendar.get(Calendar.MONTH) + 1).toString().length < 2) month = "0${calendar.get(Calendar.MONTH) + 1}" else month = "${calendar.get(Calendar.MONTH) + 1}"
+            if ((calendar.get(Calendar.MONTH) + 1).toString().length < 2)
+                month = "0${calendar.get(Calendar.MONTH) + 1}"
+            else
+                month = "${calendar.get(Calendar.MONTH) + 1}"
 
             binding.editTextDataNascimentoCadastroUsuario.setText("${calendar.get(Calendar.DAY_OF_MONTH)}/" +
                     "${month}/${calendar.get(Calendar.YEAR)}")
