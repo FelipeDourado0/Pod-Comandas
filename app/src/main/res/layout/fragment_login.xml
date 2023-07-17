@@ -34,12 +34,11 @@
             android:singleLine="false"
             android:textColorHint="@color/light_grey"
             app:boxStrokeColor="@color/sea_green"
+            app:endIconMode="clear_text"
             app:hintTextColor="@color/sea_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/podComandaImg"
-
-            >
+            app:layout_constraintTop_toBottomOf="@+id/podComandaImg">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextEmailValue"
@@ -63,12 +62,11 @@
             android:textColorHint="@color/light_grey"
             android:visibility="visible"
             app:boxStrokeColor="@color/sea_green"
+            app:endIconMode="password_toggle"
             app:hintTextColor="@color/sea_green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailbox"
-
-            >
+            app:layout_constraintTop_toBottomOf="@+id/emailbox">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextTextPasswordValue"
@@ -121,6 +119,7 @@
             android:id="@+id/google_btn"
             android:layout_width="130dp"
             android:layout_height="48dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/btn_padrao"
             android:backgroundTint="@color/red_tomato"
             android:drawableStart="@drawable/icon__google"
@@ -131,7 +130,6 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ou_entre_com_text" />

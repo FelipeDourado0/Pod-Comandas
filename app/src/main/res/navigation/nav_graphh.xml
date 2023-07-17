@@ -12,8 +12,8 @@
         <action
             android:id="@+id/action_login3_to_cadastroLoginFragment"
             app:destination="@id/cadastroLoginFragment"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/cadastroLoginFragment"
@@ -23,7 +23,7 @@
         <action
             android:id="@+id/action_cadastroLoginFragment_to_login3"
             app:destination="@id/login3"
-            app:enterAnim="@android:anim/fade_in"
-            app:exitAnim="@android:anim/fade_out" />
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
 </navigation>
